@@ -323,12 +323,12 @@ export default function ActivityHistory() {
 
   // Get color based on focus times
   const getFocusTimeColor = (count: number) => {
-    if (count === 0) return "bg-muted/30";
-    if (count <= 1) return "bg-orange-100";
-    if (count <= 3) return "bg-orange-200";
-    if (count <= 5) return "bg-orange-300";
-    if (count <= 8) return "bg-orange-400";
-    return "bg-orange-500"; // 12 or more
+    if (count === 0) return "bg-muted/50";
+    if (count <= 1) return "bg-neutral-200";
+    if (count <= 3) return "bg-neutral-400";
+    if (count <= 5) return "bg-neutral-600";
+    if (count <= 8) return "bg-neutral-800";
+    return "bg-neutral-950"; // 12 or more
   };
 
   // Format date for tooltip
@@ -381,12 +381,14 @@ export default function ActivityHistory() {
       </div>
 
       <Tabs defaultValue="timeline" className="mt-4">
-        <TabsList className="mb-4">
-          <TabsTrigger value="timeline">Timeline</TabsTrigger>
-          <TabsTrigger value="apps">Apps</TabsTrigger>
-          <TabsTrigger value="workblocks">Work Blocks</TabsTrigger>
-          <TabsTrigger value="calendar">Activity Calendar</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto">
+          <TabsList className="mb-4">
+            <TabsTrigger value="timeline">Timeline</TabsTrigger>
+            <TabsTrigger value="apps">Apps</TabsTrigger>
+            <TabsTrigger value="workblocks">Work Blocks</TabsTrigger>
+            <TabsTrigger value="calendar">Activity Calendar</TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="timeline">
           <div className="relative h-[120px] mb-6 bg-muted/30 rounded-lg overflow-hidden">
@@ -583,8 +585,8 @@ export default function ActivityHistory() {
                     "Feb",
                     "Mar",
                     "Apr",
-                  ].map((month) => (
-                    <div key={month} className="flex-1 text-center">
+                  ].map((month, index) => (
+                    <div key={index} className="flex-1 text-center">
                       {month}
                     </div>
                   ))}
@@ -641,11 +643,11 @@ export default function ActivityHistory() {
                   <span>Less</span>
                   <div className="flex mx-2 gap-1">
                     <div className="h-2.5 w-2.5 rounded-sm bg-muted/30"></div>
-                    <div className="h-2.5 w-2.5 rounded-sm bg-orange-100"></div>
-                    <div className="h-2.5 w-2.5 rounded-sm bg-orange-200"></div>
-                    <div className="h-2.5 w-2.5 rounded-sm bg-orange-300"></div>
-                    <div className="h-2.5 w-2.5 rounded-sm bg-orange-400"></div>
-                    <div className="h-2.5 w-2.5 rounded-sm bg-orange-500"></div>
+                    <div className="h-2.5 w-2.5 rounded-sm bg-neutral-200"></div>
+                    <div className="h-2.5 w-2.5 rounded-sm bg-neutral-400"></div>
+                    <div className="h-2.5 w-2.5 rounded-sm bg-neutral-600"></div>
+                    <div className="h-2.5 w-2.5 rounded-sm bg-neutral-800"></div>
+                    <div className="h-2.5 w-2.5 rounded-sm bg-neutral-950"></div>
                   </div>
                   <span>More</span>
                 </div>

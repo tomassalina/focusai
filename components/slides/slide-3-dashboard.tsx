@@ -33,9 +33,9 @@ import LifePercentage from "@/components/life-percentage";
 
 export default function Dashboard() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-        <div className="container mx-auto flex h-16 items-center justify-between">
+    <div className="flex min-h-screen flex-col px-4">
+      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur pb-4 md:pb-0 pt-4 md:pt-0">
+        <div className="container mx-auto flex h-16 items-center justify-between flex-wrap gap-4 md:flex-nowrap">
           <div className="flex items-center gap-4">
             <span className="text-xl font-bold text-primary">FocusAI</span>
             <CurrencyDisplay coins={3250} emeralds={75} />
@@ -78,7 +78,7 @@ export default function Dashboard() {
       <main className="flex-1 container mx-auto py-6">
         <div className="flex items-center justify-between mb-6">
           <Tabs defaultValue="focus" className="w-full">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-4 flex-wrap md:flex-nowrap">
               <TabsList>
                 <TabsTrigger value="focus">Focus Dashboard</TabsTrigger>
                 <TabsTrigger value="social">Social & Rewards</TabsTrigger>
@@ -105,7 +105,7 @@ export default function Dashboard() {
                               variant="outline"
                               className="bg-orange-100 text-orange-800 cursor-pointer"
                             >
-                              Tasks: 4/7
+                              Tasks: 2/7
                             </Badge>
                           </Link>
                         </div>
@@ -120,7 +120,7 @@ export default function Dashboard() {
                           <FocusTimer />
                         </div>
                         <div className="flex-1 flex justify-center">
-                          <Character state="normal" width={150} height={150} />
+                          <Character state="normal" width={190} height={190} />
                         </div>
                       </div>
                     </CardContent>
@@ -289,7 +289,5 @@ export default function Dashboard() {
         </div>
       </main>
     </div>
-    // \
-    //   <div className="mb-24"></div>
   );
 }

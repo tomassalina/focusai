@@ -53,6 +53,7 @@ export default function SlideController({
           onClick={goToPrevSlide}
           disabled={currentSlide === 1}
           className="text-white hover:bg-white/20"
+          aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6" />
           <span className="sr-only">Previous slide</span>
@@ -68,6 +69,7 @@ export default function SlideController({
           onClick={goToNextSlide}
           disabled={currentSlide === totalSlides}
           className="text-white hover:bg-white/20"
+          aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6" />
           <span className="sr-only">Next slide</span>

@@ -248,7 +248,7 @@ export default function AnalyticsPage() {
     <div className="container mx-auto py-6 px-4">
       <div className="flex items-center gap-2 justify-between mb-6 flex-col md:flex-row">
         <div className="flex items-center gap-4">
-          <Link href="/" className="mr-2">
+          <Link href="/#slide-3" className="mr-2">
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <h1 className="text-2xl font-bold">Analytics Dashboard</h1>

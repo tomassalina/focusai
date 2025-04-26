@@ -41,9 +41,9 @@ const characters = [
   {
     id: 1,
     name: "Hooded Warrior",
-    image: "/character-1-normal.png",
-    angryImage: "/character-1-angry.png",
-    cryingImage: "/character-1-crying.png",
+    image: "/characters/character-1-normal.png",
+    angryImage: "/characters/character-1-angry.png",
+    cryingImage: "/characters/character-1-crying.png",
     level: 3,
     xp: 4250,
     maxXp: 5000,
@@ -57,9 +57,9 @@ const characters = [
   {
     id: 2,
     name: "Focus Fox",
-    image: "/red-fox-portrait.png",
-    angryImage: "/red-fox-portrait.png", // Using same image as placeholder
-    cryingImage: "/red-fox-portrait.png", // Using same image as placeholder
+    image: "/characters/red_fox.png",
+    angryImage: "/characters/red_fox.png",
+    cryingImage: "/characters/red_fox.png",
     level: 2,
     xp: 2150,
     maxXp: 3000,
@@ -303,7 +303,7 @@ export default function Character({
         </div>
 
         {/* Experience bar */}
-        <div className="absolute -bottom-0 left-0 right-0 px-2">
+        <div className="absolute -bottom-0 left-6 right-0 px-2">
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center text-xs">
               <div className="flex items-center">
@@ -605,25 +605,25 @@ export default function Character({
                             <div className="text-sm text-muted-foreground mb-1">
                               Average Daily Focus
                             </div>
-                            <div className="text-2xl font-bold">2.4h</div>
+                            <div className="text-xl font-bold">2.4h</div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Best Focus Day
                             </div>
-                            <div className="text-2xl font-bold">Monday</div>
+                            <div className="text-xl font-bold">Monday</div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Best Focus Time
                             </div>
-                            <div className="text-2xl font-bold">10-12 AM</div>
+                            <div className="text-xl font-bold">10-12 AM</div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Longest Streak
                             </div>
-                            <div className="text-2xl font-bold">
+                            <div className="text-xl font-bold">
                               {selectedCharacter.streakDays} days
                             </div>
                           </div>

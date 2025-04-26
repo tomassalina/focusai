@@ -46,7 +46,7 @@ const characters = [
   {
     id: 1,
     name: "Hooded Warrior",
-    image: "/character-1-normal.png",
+    image: "/characters/character-1-normal.png",
     description: "Your loyal companion on the productivity journey.",
     rarity: "Common",
     owned: true,
@@ -55,7 +55,7 @@ const characters = [
   {
     id: 2,
     name: "Focus Fox",
-    image: "/red-fox-portrait.png",
+    image: "/characters/character-2-normal.png",
     description:
       "Quick and nimble, helps you stay alert during focus sessions.",
     rarity: "Rare",
@@ -65,7 +65,7 @@ const characters = [
   {
     id: 3,
     name: "Productivity Panda",
-    image: "/giant-panda-eating.png",
+    image: "/characters/character-3-normal.png",
     description: "Calm and focused, perfect for long work sessions.",
     rarity: "Epic",
     owned: false,
@@ -74,7 +74,7 @@ const characters = [
   {
     id: 4,
     name: "Time Wizard",
-    image: "/wise-forest-mage.png",
+    image: "/characters/character-4-normal.png",
     description: "Master of time management with special productivity powers.",
     rarity: "Legendary",
     owned: false,
@@ -83,7 +83,7 @@ const characters = [
   {
     id: 5,
     name: "Cosmic Guardian",
-    image: "/celestial-sentinel.png",
+    image: "/characters/character-5-normal.png",
     description:
       "Protector of your focus with otherworldly concentration abilities.",
     rarity: "Legendary",
@@ -93,7 +93,7 @@ const characters = [
   {
     id: 6,
     name: "Zen Master",
-    image: "/serene-contemplation.png",
+    image: "/characters/character-6-normal.png",
     description: "Brings peace and clarity to your work environment.",
     rarity: "Epic",
     owned: false,
@@ -102,7 +102,7 @@ const characters = [
   {
     id: 7,
     name: "Digital Detective",
-    image: "/city-noir-investigator.png",
+    image: "/characters/character-7-normal.png",
     description: "Helps you track down distractions and eliminate them.",
     rarity: "Rare",
     owned: false,
@@ -111,7 +111,7 @@ const characters = [
   {
     id: 8,
     name: "Quantum Companion",
-    image: "/quantum-companion.png",
+    image: "/characters/character-8-normal.png",
     description: "Exists in multiple states to help you multitask effectively.",
     rarity: "Legendary",
     owned: false,
@@ -124,7 +124,7 @@ const themes = [
   {
     id: 1,
     name: "Classic Office",
-    image: "/modern-office-setup.png",
+    image: "/themes/theme-1.png",
     description: "Traditional workspace with a professional feel.",
     rarity: "Common",
     owned: true,
@@ -133,7 +133,7 @@ const themes = [
   {
     id: 2,
     name: "Zen Garden",
-    image: "/tranquil-stone-garden.png",
+    image: "/themes/theme-2.png",
     description: "Peaceful environment with natural elements for calm focus.",
     rarity: "Rare",
     owned: false,
@@ -142,7 +142,7 @@ const themes = [
   {
     id: 3,
     name: "Space Station",
-    image: "/space-station-theme.png",
+    image: "/themes/theme-3.png",
     description: "Futuristic workspace with a view of the cosmos.",
     rarity: "Epic",
     owned: false,
@@ -151,7 +151,7 @@ const themes = [
   {
     id: 4,
     name: "Enchanted Library",
-    image: "/enchanted-library-theme.png",
+    image: "/themes/theme-4.png",
     description: "Surrounded by ancient knowledge and magical ambiance.",
     rarity: "Legendary",
     owned: false,
@@ -280,7 +280,7 @@ export default function MarketplacePage() {
     <div className="container mx-auto px-4 py-6">
       <div className="flex items-center justify-between mb-6 flex-wrap gap-4 md:flex-nowrap">
         <div className="flex items-center gap-4">
-          <Link href="/" className="mr-2">
+          <Link href="/#slide-3" className="mr-2">
             <ArrowLeft className="h-5 w-5" />
           </Link>
           <h1 className="text-2xl font-bold">Character Marketplace</h1>
@@ -321,8 +321,8 @@ export default function MarketplacePage() {
               name="Basic Chest"
               description="A simple chest with a chance for common and rare items."
               price={500}
-              image="/wooden-treasure-chest.png"
-              openedImage="/open-wooden-chest.png"
+              image="/chests/chest-1.png"
+              openedImage="/chests/chest-1.png"
               rarity="Common"
               rewards={{
                 minCoins: 300,
@@ -339,8 +339,8 @@ export default function MarketplacePage() {
               name="Silver Chest"
               description="A valuable chest with better rewards and higher chances."
               price={1200}
-              image="/silver-treasure-chest.png"
-              openedImage="/open-silver-chest.png"
+              image="/chests/chest-2.png"
+              openedImage="/chests/chest-2.png"
               rarity="Rare"
               rewards={{
                 minCoins: 800,
@@ -357,8 +357,8 @@ export default function MarketplacePage() {
               name="Golden Chest"
               description="A premium chest with excellent rewards and high chances for rare items."
               price={2500}
-              image="/golden-treasure-chest.png"
-              openedImage="/open-golden-chest.png"
+              image="/chests/chest-3.png"
+              openedImage="/chests/chest-3.png"
               rarity="Epic"
               rewards={{
                 minCoins: 1500,
@@ -375,8 +375,8 @@ export default function MarketplacePage() {
               name="Legendary Chest"
               description="The ultimate chest with guaranteed premium rewards and characters."
               price={5000}
-              image="/legendary-treasure-chest.png"
-              openedImage="/open-legendary-chest.png"
+              image="/chests/chest-4.png"
+              openedImage="/chests/chest-4.png"
               rarity="Legendary"
               rewards={{
                 minCoins: 3000,

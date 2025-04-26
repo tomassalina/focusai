@@ -69,7 +69,7 @@ export default function StreakTimeline({
             <div className="text-xs text-muted-foreground mb-1">{day.day}</div>
             <div
               className={cn(
-                "w-10 h-10 rounded-full flex items-center justify-center",
+                "w-5 h-5 rounded-full flex items-center justify-center md:w-10 md:h-10",
                 day.completed
                   ? "bg-orange-100 text-orange-800 border-2 border-orange-300"
                   : "bg-gray-100 text-gray-400 border-2 border-gray-200",
