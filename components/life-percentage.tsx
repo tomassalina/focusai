@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 
 interface LifePercentageProps {
   birthDate: string;
+  scale?: number;
 }
 
-export default function LifePercentage({ birthDate }: LifePercentageProps) {
+export default function LifePercentage({
+  birthDate,
+  scale = 100,
+}: LifePercentageProps) {
   const [percentages, setPercentages] = useState({
     day: 0,
     week: 0,
@@ -64,7 +68,7 @@ export default function LifePercentage({ birthDate }: LifePercentageProps) {
   }, [birthDate]);
 
   return (
-    <div className="flex justify-between">
+    <div className={`flex justify-between scale-${scale}`}>
       <div className="text-center">
         <div className="text-2xl font-bold">{percentages.day}%</div>
         <div className="text-xs text-muted-foreground">Day</div>
