@@ -57,8 +57,8 @@ const characters = [
   {
     id: 2,
     name: "Focus Fox",
-    image: "/characters/red_fox.png",
-    angryImage: "/characters/red_fox.png",
+    image: "/characters/character-2-normal.png",
+    angryImage: "/characters/character-2-normal.png",
     cryingImage: "/characters/red_fox.png",
     level: 2,
     xp: 2150,
