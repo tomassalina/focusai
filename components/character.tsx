@@ -399,7 +399,7 @@ export default function Character({
                                 : ""
                             }`}
                           >
-                            <div className="flex items-center justify-between mb-2">
+                            <div className="flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between mb-4 md:mb-2">
                               <div className="flex items-center gap-2">
                                 <Badge className="h-6 w-6 rounded-full flex items-center justify-center">
                                   {level.level}
@@ -544,25 +544,31 @@ export default function Character({
                             <div className="text-sm text-muted-foreground mb-1">
                               Average Daily Focus
                             </div>
-                            <div className="text-xl font-bold">2.4h</div>
+                            <div className="text-xs md:text-xl font-bold">
+                              2.4h
+                            </div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Best Focus Day
                             </div>
-                            <div className="text-xl font-bold">Monday</div>
+                            <div className="text-xs md:text-xl font-bold">
+                              Monday
+                            </div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Best Focus Time
                             </div>
-                            <div className="text-xl font-bold">10-12 AM</div>
+                            <div className="text-xs md:text-xl font-bold">
+                              10-12 AM
+                            </div>
                           </div>
                           <div className="p-3 border rounded-lg">
                             <div className="text-sm text-muted-foreground mb-1">
                               Longest Streak
                             </div>
-                            <div className="text-xl font-bold">
+                            <div className="text-xs md:text-xl font-bold">
                               {selectedCharacter.streakDays} days
                             </div>
                           </div>
