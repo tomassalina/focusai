@@ -68,24 +68,28 @@ export default function LifePercentage({
   }, [birthDate]);
 
   return (
-    <div className={`flex justify-between scale-${scale}`}>
-      <div className="text-center">
-        <div className="text-2xl font-bold">{percentages.day}%</div>
+    <div
+      className={`w-full flex justify-between items-center gap-5 scale-${scale}`}
+    >
+      <div className="flex flex-col items-center">
+        <div className="text-sm md:text-2xl font-bold">{percentages.day}%</div>
         <div className="text-xs text-muted-foreground">Day</div>
       </div>
 
-      <div className="text-center">
-        <div className="text-2xl font-bold">{percentages.week}%</div>
+      <div className="flex flex-col items-center">
+        <div className="text-sm md:text-2xl font-bold">{percentages.week}%</div>
         <div className="text-xs text-muted-foreground">Week</div>
       </div>
 
-      <div className="text-center">
-        <div className="text-2xl font-bold">{percentages.month}%</div>
+      <div className="flex flex-col items-center">
+        <div className="text-sm md:text-2xl font-bold">
+          {percentages.month}%
+        </div>
         <div className="text-xs text-muted-foreground">Month</div>
       </div>
 
-      <div className="text-center">
-        <div className="text-2xl font-bold">{percentages.life}%</div>
+      <div className="flex flex-col items-center">
+        <div className="text-sm md:text-2xl font-bold">{percentages.life}%</div>
         <div className="text-xs text-muted-foreground">Life</div>
       </div>
     </div>

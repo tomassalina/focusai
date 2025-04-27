@@ -89,7 +89,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {showHeader && (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur">
-          <div className="container mx-auto flex h-16 items-center justify-between">
+          <div className="container mx-auto px-6 flex h-16 items-center justify-between">
             <div className="flex items-center gap-4">
               <span className="text-xl font-bold text-primary">FocusAI</span>
               <span className="text-sm text-muted-foreground hidden md:block">

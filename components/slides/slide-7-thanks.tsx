@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ThanksSlide() {
   return (
-    <div className="container mx-auto py-8 md:py-12 px-4">
+    <div className="container mx-auto py-8 md:py-12 px-6">
       <div className="flex flex-col items-center justify-center min-h-[70vh] md:min-h-[80vh]">
         <h2 className="text-base md:text-lg text-muted-foreground uppercase tracking-wider mb-2">
           Final Thoughts

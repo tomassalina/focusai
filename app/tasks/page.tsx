@@ -133,7 +133,7 @@ export default function TasksPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-6 py-6">
       <div className="flex items-center mb-6">
         <Link href="/#slide-3" className="mr-4">
           <ArrowLeft className="h-5 w-5" />
@@ -164,12 +164,14 @@ export default function TasksPage() {
               </div>
 
               <Tabs defaultValue="all">
-                <TabsList className="mb-4">
-                  <TabsTrigger value="all">All Tasks</TabsTrigger>
-                  <TabsTrigger value="work">Work</TabsTrigger>
-                  <TabsTrigger value="study">Study</TabsTrigger>
-                  <TabsTrigger value="completed">Completed</TabsTrigger>
-                </TabsList>
+                <div className="overflow-x-auto pb-2">
+                  <TabsList className="mb-4">
+                    <TabsTrigger value="all">All Tasks</TabsTrigger>
+                    <TabsTrigger value="work">Work</TabsTrigger>
+                    <TabsTrigger value="study">Study</TabsTrigger>
+                    <TabsTrigger value="completed">Completed</TabsTrigger>
+                  </TabsList>
+                </div>
 
                 <TabsContent value="all">
                   <div className="space-y-2">
@@ -332,7 +334,10 @@ export default function TasksPage() {
                     <Clock className="h-4 w-4" /> 60 min focus time
                   </div>
                   <Button size="sm" className="w-full">
-                    <Timer className="h-4 w-4 mr-1" /> Start Focus Session
+                    <Timer className="h-4 w-4 mr-1" />{" "}
+                    <span className="md:text-xs lg:text-base">
+                      Start Focus Session
+                    </span>
                   </Button>
                 </div>
 
@@ -350,7 +355,10 @@ export default function TasksPage() {
                     <Clock className="h-4 w-4" /> 120 min focus time
                   </div>
                   <Button size="sm" className="w-full">
-                    <Timer className="h-4 w-4 mr-1" /> Start Focus Session
+                    <Timer className="h-4 w-4 mr-1" />{" "}
+                    <span className="md:text-xs lg:text-base">
+                      Start Focus Session
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -384,7 +392,7 @@ function TaskItem({
 }: TaskItemProps) {
   return (
     <div
-      className={`p-3 border rounded-lg flex items-center gap-3 ${
+      className={`p-3 border rounded-lg flex items-center gap-1 md:gap-3 ${
         task.completed ? "bg-muted/30" : ""
       }`}
     >
@@ -401,22 +409,30 @@ function TaskItem({
         )}
       </Button>
 
-      <div className="flex-1">
+      <div className="w-full flex-col">
         <p
-          className={`${
+          className={`truncate  text-xs md:text-base ${
             task.completed ? "line-through text-muted-foreground" : ""
           }`}
         >
           {task.title}
         </p>
-      </div>
-
-      <div className="flex items-center gap-2">
-        <Badge variant="outline" className={priorityColor}>
+        <Badge variant="outline" className={`md:hidden ${priorityColor}`}>
           {task.priority}
         </Badge>
 
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
+        <div className="md:hidden flex items-center gap-1 text-xs text-muted-foreground">
+          <Clock className="h-3 w-3" />
+          <span>{task.focusTime}m</span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <Badge variant="outline" className={`hidden md:block ${priorityColor}`}>
+          {task.priority}
+        </Badge>
+
+        <div className="hidden md:flex items-center gap-1 text-xs text-muted-foreground">
           <Clock className="h-3 w-3" />
           <span>{task.focusTime}m</span>
         </div>

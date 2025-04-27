@@ -245,7 +245,7 @@ export default function AnalyticsPage() {
   });
 
   return (
-    <div className="container mx-auto py-6 px-4">
+    <div className="container mx-auto py-6 px-6">
       <div className="flex items-center gap-2 justify-between mb-6 flex-col md:flex-row">
         <div className="flex items-center gap-4">
           <Link href="/#slide-3" className="mr-2">
@@ -253,7 +253,7 @@ export default function AnalyticsPage() {
           </Link>
           <h1 className="text-2xl font-bold">Analytics Dashboard</h1>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
           <div className="flex items-center gap-2">
             <Popover>
               <PopoverTrigger asChild>
@@ -283,12 +283,18 @@ export default function AnalyticsPage() {
               </PopoverContent>
             </Popover>
           </div>
-          <Button variant="outline" size="icon">
-            <RefreshCw className="h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="icon">
-            <Download className="h-4 w-4" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <p className="md:hidden">Refresh</p>
+            <Button variant="outline" size="icon">
+              <RefreshCw className="h-4 w-4" />
+            </Button>
+          </div>
+          <div className="flex items-center gap-2">
+            <p className="md:hidden">Download</p>
+            <Button variant="outline" size="icon">
+              <Download className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -412,8 +418,8 @@ export default function AnalyticsPage() {
       </div>
 
       <Tabs defaultValue="overview" className="space-y-4">
-        <div className="overflow-x-auto">
-          <TabsList className="">
+        <div className="overflow-x-auto pb-2">
+          <TabsList>
             <TabsTrigger value="overview">
               <BarChart2 className="h-4 w-4 mr-2" />
               Overview

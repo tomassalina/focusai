@@ -277,7 +277,7 @@ export default function MarketplacePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-6 py-6">
       <div className="flex items-center justify-between mb-6 flex-wrap gap-4 md:flex-nowrap">
         <div className="flex items-center gap-4">
           <Link href="/#slide-3" className="mr-2">
@@ -299,7 +299,7 @@ export default function MarketplacePage() {
 
       <Tabs defaultValue="chests">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-2 md:flex-nowrap">
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto pb-2">
             <TabsList>
               <TabsTrigger value="chests">Chests</TabsTrigger>
               <TabsTrigger value="characters">Characters</TabsTrigger>

@@ -344,7 +344,7 @@ export default function ActivityHistory() {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col md:flew-row gap-4 items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
@@ -366,7 +366,7 @@ export default function ActivityHistory() {
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-4">
           <div className="text-sm">
             <span className="text-muted-foreground">Total Focus Time:</span>{" "}
             <span className="font-medium">{currentData.totalFocusTime}</span>
@@ -381,7 +381,7 @@ export default function ActivityHistory() {
       </div>
 
       <Tabs defaultValue="timeline" className="mt-4">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto pb-2">
           <TabsList className="mb-4">
             <TabsTrigger value="timeline">Timeline</TabsTrigger>
             <TabsTrigger value="apps">Apps</TabsTrigger>
@@ -414,10 +414,10 @@ export default function ActivityHistory() {
             <div className="absolute top-4 left-[62.5%] w-[7.5%] h-4 bg-primary/70 rounded-sm"></div>
             <div className="absolute top-4 left-[75%] w-[5%] h-4 bg-primary/70 rounded-sm"></div>
 
-            <div className="absolute top-12 left-[18.75%] w-[7.5%] h-4 bg-blue-400/70 rounded-sm"></div>
-            <div className="absolute top-12 left-[31.25%] w-[5%] h-4 bg-blue-400/70 rounded-sm"></div>
-            <div className="absolute top-12 left-[43.75%] w-[10%] h-4 bg-blue-400/70 rounded-sm"></div>
-            <div className="absolute top-12 left-[62.5%] w-[12.5%] h-4 bg-blue-400/70 rounded-sm"></div>
+            <div className="absolute top-12 left-[18.75%] w-[7.5%] h-4 bg-blue-500/90 rounded-sm"></div>
+            <div className="absolute top-12 left-[31.25%] w-[5%] h-4 bg-blue-500/90 rounded-sm"></div>
+            <div className="absolute top-12 left-[43.75%] w-[10%] h-4 bg-blue-500/90 rounded-sm"></div>
+            <div className="absolute top-12 left-[62.5%] w-[12.5%] h-4 bg-blue-500/90 rounded-sm"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -456,7 +456,9 @@ export default function ActivityHistory() {
                         {block.startTime}
                       </div>
                       <div className="flex-1 ml-2">
-                        <div className="font-medium">{block.activity}</div>
+                        <div className="text-sm lg:text-base font-medium">
+                          {block.activity}
+                        </div>
                         <div className="text-xs text-muted-foreground">
                           {block.duration}
                         </div>
@@ -515,7 +517,7 @@ export default function ActivityHistory() {
               {currentData.workblocks.map((block, index) => (
                 <div
                   key={index}
-                  className="flex items-center p-3 border rounded-lg"
+                  className="flex flex-col md:flex-row md:items-center p-3 border rounded-lg"
                 >
                   <div className="w-16 text-sm font-medium">
                     {block.startTime}
@@ -566,7 +568,7 @@ export default function ActivityHistory() {
               </Select>
             </div>
 
-            <div className="bg-muted/20 rounded-lg p-4 overflow-x-auto">
+            <div className="bg-muted/20 rounded-lg p-4 overflow-x-auto pb-2">
               <div className="min-w-[700px]">
                 {/* Month labels */}
                 <div className="flex text-xs text-muted-foreground mb-1">

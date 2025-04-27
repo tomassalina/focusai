@@ -30,7 +30,7 @@ export default function StreakTimeline({
 
   return (
     <div className={cn("space-y-4", className)}>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center gap-2">
           <Flame className="h-5 w-5 text-orange-500" />
           <span className="font-medium">Current Streak</span>{" "}
@@ -90,7 +90,7 @@ export default function StreakTimeline({
       </div>
 
       <div className="text-xs text-muted-foreground mb-3 bg-muted p-2 rounded-md">
-        <div className="flex items-center gap-1">
+        <div className="flex flex-col md:flex-row items-center gap-1 text-center md:text-left">
           <span className="font-medium text-primary">Streak requirement:</span>{" "}
           Complete at least 3 focus sessions (25 min each) daily
         </div>

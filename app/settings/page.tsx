@@ -22,7 +22,7 @@ import Link from "next/link";
 
 export default function SettingsPage() {
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-6 py-6">
       <div className="flex items-center mb-6">
         <Link href="/#slide-3" className="mr-4">
           <ArrowLeft className="h-5 w-5" />

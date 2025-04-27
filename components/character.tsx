@@ -25,6 +25,10 @@ import {
   Award,
   ChevronLeft,
   ChevronRight,
+  StarIcon,
+  Smile,
+  Angry,
+  Droplet,
 } from "lucide-react";
 
 type MascotState = "normal" | "angry" | "crying";
@@ -215,112 +219,45 @@ export default function Character({
         <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2 mr-2">
           <button
             onClick={(e) => handleStateChange("normal", e)}
-            className={`p-1 rounded-full transition-colors ${
+            className={`cursor-pointer p-1 rounded-full transition-colors ${
               currentState === "normal"
                 ? "bg-blue-100 text-blue-500"
                 : "bg-gray-100 text-gray-400 hover:bg-gray-200"
             }`}
             title="Normal state"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
-            </svg>
+            <Smile className="h-4 w-4" />
           </button>
           <button
             onClick={(e) => handleStateChange("crying", e)}
-            className={`p-1 rounded-full transition-colors ${
+            className={`cursor-pointer p-1 rounded-full transition-colors ${
               currentState === "crying"
                 ? "bg-blue-100 text-blue-500"
                 : "bg-gray-100 text-gray-400 hover:bg-gray-200"
             }`}
             title="Crying state"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M9.5 9A.5.5 0 0 0 9 8.5"></path>
-              <path d="M14.5 9a.5.5 0 0 1 .5-.5"></path>
-              <path d="M9 15h6"></path>
-              <path d="M7 16c.5 1 2 2 5 2s4.5-1 5-2"></path>
-              <path d="M8.5 2a6.5 6.5 0 0 0-6 9 6 6 0 0 0 1 2.5"></path>
-              <path d="M17.5 11.5A6 6 0 0 1 21 6a6.5 6.5 0 0 0-6.5-4"></path>
-              <path d="M9 11h0"></path>
-              <path d="M15 11h0"></path>
-              <path d="M8 14h0"></path>
-              <path d="M16 14h0"></path>
-              <path d="M8.5 2C5 2 2 5.5 2 9.5c0 2.5 1 4 2 5.5"></path>
-            </svg>
+            <Droplet className="h-4 w-4" />
           </button>
           <button
             onClick={(e) => handleStateChange("angry", e)}
-            className={`p-1 rounded-full transition-colors ${
+            className={`cursor-pointer p-1 rounded-full transition-colors ${
               currentState === "angry"
                 ? "bg-blue-100 text-blue-500"
                 : "bg-gray-100 text-gray-400 hover:bg-gray-200"
             }`}
             title="Angry state"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
-              <path d="M7.5 8 10 9"></path>
-              <path d="m14 9 2.5-1"></path>
-              <path d="M9 10h0"></path>
-              <path d="M15 10h0"></path>
-            </svg>
+            <Angry className="h-4 w-4" />
           </button>
         </div>
 
         {/* Experience bar */}
-        <div className="absolute -bottom-0 left-6 right-0 px-2">
+        <div className="md:w-full absolute -bottom-0 md:-bottom-4 lg:bottom-2 left-6 md:left-2 lg:left-2 right-0 px-2">
           <div className="flex flex-col gap-1">
             <div className="flex justify-between items-center text-xs">
               <div className="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-blue-500 mr-1"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
+                <StarIcon className="h-4 w-4 text-blue-500 mr-1" />
                 <span className="font-medium">Level {3}</span>
               </div>
               <span className="text-muted-foreground">4,250 XP</span>
@@ -436,13 +373,15 @@ export default function Character({
             {/* Character Stats and Details */}
             <div className="md:col-span-2">
               <Tabs defaultValue="progression">
-                <TabsList className="mb-4">
-                  <TabsTrigger value="progression">
-                    Level Progression
-                  </TabsTrigger>
-                  <TabsTrigger value="stats">Statistics</TabsTrigger>
-                  <TabsTrigger value="achievements">Achievements</TabsTrigger>
-                </TabsList>
+                <div className="overflow-x-auto pb-2">
+                  <TabsList className="mb-4">
+                    <TabsTrigger value="progression">
+                      Level Progression
+                    </TabsTrigger>
+                    <TabsTrigger value="stats">Statistics</TabsTrigger>
+                    <TabsTrigger value="achievements">Achievements</TabsTrigger>
+                  </TabsList>
+                </div>
 
                 <TabsContent value="progression">
                   <Card>

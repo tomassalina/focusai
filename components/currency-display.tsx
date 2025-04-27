@@ -25,8 +25,8 @@ export default function CurrencyDisplay({
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="flex items-center gap-1 bg-amber-100 text-amber-800 px-2 py-1 rounded-full">
-              <Trophy className="h-4 w-4 text-amber-500" />
+            <div className="flex items-center gap-1 bg-amber-100 text-amber-800 px-2 py-1 rounded-full text-xs md:text-base">
+              <Trophy className="h-3 w-3 md:h4 md:h-4 text-amber-500" />
               <span className="font-medium">{coins}</span>
             </div>
           </TooltipTrigger>
@@ -39,8 +39,8 @@ export default function CurrencyDisplay({
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="flex items-center gap-1 bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">
-              <Diamond className="h-4 w-4 text-emerald-500" />
+            <div className="flex items-center gap-1 bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-xs md:text-base">
+              <Diamond className="h-3 w-3 md:h4 md:h-4 text-emerald-500" />
               <span className="font-medium">{emeralds}</span>
               <Button
                 variant="ghost"

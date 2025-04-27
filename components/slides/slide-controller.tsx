@@ -46,7 +46,7 @@ export default function SlideController({
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 py-4 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-sm">
-      <div className="container mx-auto flex items-center justify-center gap-8">
+      <div className="container mx-auto px-6 flex items-center justify-center gap-8">
         <Button
           variant="ghost"
           size="icon"

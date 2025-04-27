@@ -238,41 +238,6 @@ const challenges = [
   },
 ];
 
-// const characters = [
-//   {
-//     id: 1,
-//     name: "Robo Helper",
-//     image: "/futuristic-helper-bot.png",
-//     rarity: "Common",
-//     owned: true,
-//     price: 0,
-//   },
-//   {
-//     id: 2,
-//     name: "Focus Fox",
-//     image: "/red-fox-portrait.png",
-//     rarity: "Rare",
-//     owned: true,
-//     price: 1000,
-//   },
-//   {
-//     id: 3,
-//     name: "Productivity Panda",
-//     image: "/giant-panda-eating.png",
-//     rarity: "Epic",
-//     owned: false,
-//     price: 2500,
-//   },
-//   {
-//     id: 4,
-//     name: "Time Wizard",
-//     image: "/wise-forest-mage.png",
-//     rarity: "Legendary",
-//     owned: false,
-//     price: 5000,
-//   },
-// ];
-
 export default function SocialFeatures() {
   const [userCoins] = useState(3200);
   const [userStreak] = useState(7);
@@ -334,29 +299,27 @@ export default function SocialFeatures() {
       </Card>
 
       <Tabs defaultValue="friends">
-        <TabsList className="mb-4">
-          <TabsTrigger value="friends">
-            <Users className="h-4 w-4 mr-2" />
-            Friends
-          </TabsTrigger>
-          <TabsTrigger value="leaderboard">
-            <Trophy className="h-4 w-4 mr-2" />
-            Leaderboard
-          </TabsTrigger>
-          <TabsTrigger value="challenges">
-            <Zap className="h-4 w-4 mr-2" />
-            Challenges
-          </TabsTrigger>
-          {/*}<TabsTrigger value="characters">
-            <Gift className="h-4 w-4 mr-2" />
-            Characters
-          </TabsTrigger> {*/}
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+          <TabsList className="mb-4">
+            <TabsTrigger value="friends">
+              <Users className="h-4 w-4 mr-2" />
+              Friends
+            </TabsTrigger>
+            <TabsTrigger value="leaderboard">
+              <Trophy className="h-4 w-4 mr-2" />
+              Leaderboard
+            </TabsTrigger>
+            <TabsTrigger value="challenges">
+              <Zap className="h-4 w-4 mr-2" />
+              Challenges
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="friends">
-          <Card>
+          <Card className="gap-0">
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex gap-2 items-center justify-between">
                 <CardTitle>Friends Activity</CardTitle>
                 <Button variant="outline" size="sm">
                   Add Friend
@@ -364,7 +327,7 @@ export default function SocialFeatures() {
               </div>
             </CardHeader>
             <CardContent>
-              <ScrollArea className="h-[300px]">
+              <ScrollArea className="md:h-[300px]">
                 <div className="space-y-4">
                   {friends.map((friend) => (
                     <div
@@ -418,9 +381,9 @@ export default function SocialFeatures() {
         <TabsContent value="leaderboard">
           <Card>
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 <CardTitle>Weekly Leaderboard</CardTitle>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col md:flex-row items-center gap-4">
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center space-x-1">
                       <Users2
@@ -474,7 +437,7 @@ export default function SocialFeatures() {
               </div>
             </CardHeader>
             <CardContent>
-              <ScrollArea className="h-[300px]">
+              <ScrollArea className="md:h-[300px]">
                 <div className="space-y-3">
                   {(showGlobalLeaderboard
                     ? globalLeaderboard
@@ -525,9 +488,9 @@ export default function SocialFeatures() {
         <TabsContent value="challenges">
           <Card>
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 <CardTitle>Daily Challenges</CardTitle>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col md:flex-row items-center gap-2">
                   <Badge
                     variant="outline"
                     className="bg-green-100 text-green-800"
@@ -770,80 +733,6 @@ export default function SocialFeatures() {
             </CardContent>
           </Card>
         </TabsContent>
-
-        {/*} <TabsContent value="characters">
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle>Character Collection</CardTitle>
-                <div className="flex items-center gap-2">
-                  <Trophy className="h-4 w-4 text-amber-500" />
-                  <span className="font-bold">{userCoins} coins</span>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {characters.map((character) => (
-                  <div key={character.id} className="border rounded-lg p-3 flex flex-col items-center">
-                    <div className="w-20 h-20 mb-2">
-                      <img
-                        src={character.image || "/placeholder.svg"}
-                        alt={character.name}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <h3 className="font-medium text-center">{character.name}</h3>
-                    <Badge
-                      variant="outline"
-                      className={
-                        character.rarity === "Common"
-                          ? "bg-gray-100 text-gray-800"
-                          : character.rarity === "Rare"
-                            ? "bg-blue-100 text-blue-800"
-                            : character.rarity === "Epic"
-                              ? "bg-purple-100 text-purple-800"
-                              : "bg-amber-100 text-amber-800"
-                      }
-                    >
-                      {character.rarity}
-                    </Badge>
-                    <div className="mt-2">
-                      {character.owned ? (
-                        <Badge variant="outline" className="bg-green-100 text-green-800">
-                          Owned
-                        </Badge>
-                      ) : (
-                        <Button
-                          size="sm"
-                          variant={userCoins >= character.price ? "default" : "outline"}
-                          disabled={userCoins < character.price}
-                        >
-                          <Trophy className="h-3 w-3 mr-1 text-amber-500" />
-                          {character.price}
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 p-4 border rounded-lg bg-muted/30">
-                <h3 className="font-medium mb-2">Mystery Box</h3>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm">Get a random character with a chance for rare and legendary items!</p>
-                    <div className="flex items-center gap-2 mt-1">
-                      <Trophy className="h-4 w-4 text-amber-500" />
-                      <span className="font-bold">1000 coins</span>
-                    </div>
-                  </div>
-                  <Button>Open Box</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent> {*/}
       </Tabs>
     </div>
   );

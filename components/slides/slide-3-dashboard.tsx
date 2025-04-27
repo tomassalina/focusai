@@ -33,9 +33,9 @@ import LifePercentage from "@/components/life-percentage";
 
 export default function Dashboard() {
   return (
-    <div className="flex min-h-screen flex-col px-4">
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur pb-4 md:pb-0 pt-4 md:pt-0">
-        <div className="container mx-auto flex h-16 items-center justify-between flex-wrap gap-4 md:flex-nowrap">
+    <div className="flex min-h-screen flex-col">
+      <header className="px-6 sticky top-0 z-50 border-b bg-background/95 backdrop-blur pb-4 md:pb-0 pt-4 md:pt-0">
+        <div className="container mx-auto flex flex-col md:flex-row h-16 items-center justify-center md:justify-between gap-4">
           <div className="flex items-center gap-4">
             <span className="text-xl font-bold text-primary">FocusAI</span>
             <CurrencyDisplay coins={3250} emeralds={75} />
@@ -75,10 +75,10 @@ export default function Dashboard() {
         </div>
       </header>
 
-      <main className="flex-1 container mx-auto py-6">
+      <main className="flex-1 container mx-auto py-6 px-6">
         <div className="flex items-center justify-between mb-6">
           <Tabs defaultValue="focus" className="w-full">
-            <div className="flex items-center justify-between gap-4 flex-wrap md:flex-nowrap">
+            <div className="flex flex-col md:flex-row md:justify-between gap-4 items-center">
               <TabsList>
                 <TabsTrigger value="focus">Focus Dashboard</TabsTrigger>
                 <TabsTrigger value="social">Social & Rewards</TabsTrigger>
@@ -91,7 +91,7 @@ export default function Dashboard() {
                 <div className="md:col-span-2">
                   <Card className="mb-6 gap-2 pb-8">
                     <CardHeader className="pb-3">
-                      <div className="flex justify-between items-center">
+                      <div className="flex flex-col md:flex-row gap-2 justify-between items-center">
                         <CardTitle>Focus Dashboard</CardTitle>
                         <div className="flex items-center gap-2">
                           <Badge
@@ -110,7 +110,7 @@ export default function Dashboard() {
                           </Link>
                         </div>
                       </div>
-                      <CardDescription>
+                      <CardDescription className="text-center md:text-left">
                         Track your productivity and stay focused
                       </CardDescription>
                     </CardHeader>
@@ -187,7 +187,7 @@ export default function Dashboard() {
                                 8 times
                               </span>
                             </div>
-                            <div className="flex items-center gap-2 mt-2">
+                            <div className="flex flex-wrap items-center gap-2 mt-2">
                               <Badge
                                 variant="outline"
                                 className="bg-red-50 text-red-800"

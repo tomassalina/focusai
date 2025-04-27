@@ -60,7 +60,7 @@ export default function TeamSlide() {
   const secondRow = teamMembers.slice(4, 7);
 
   return (
-    <div className="container mx-auto py-8 md:py-12 px-4">
+    <div className="container mx-auto py-8 md:py-12 px-6">
       <div className="text-center mb-8 md:mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">
           Our Team
