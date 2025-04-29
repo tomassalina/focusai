@@ -9,55 +9,52 @@ export default function TeamSlide() {
       university: "ITBA",
       degree: "Business & Technology",
       linkedin: "https://www.linkedin.com/in/tomassalina/",
-      image: "/diverse-group-city.png",
+      image: "/team/tomas-salina-avatar.png",
     },
     {
       name: "Tiago Maetokuhiga",
       university: "ITBA",
       degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member2",
-      image: "/diverse-group-city.png",
+      linkedin: "https://www.linkedin.com/in/tiago-maetokuhiga-2727a026b/",
+      image: "/team/tiago-maetokuhiga-avatar.png",
     },
     {
       name: "Dolores Silva",
       university: "ITBA",
       degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member3",
-      image: "/diverse-group-city.png",
+      linkedin:
+        "https://www.linkedin.com/in/dolores-silva-felgueras-a02923361/",
+      image: "/team/dolores-silva-avatar.jpg",
     },
     {
       name: "Francisco Giammona",
       university: "ITBA",
       degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member4",
-      image: "/diverse-group-city.png",
+      linkedin: "https://www.linkedin.com/in/giammona/",
+      image: "/team/francisco-giammona-avatar.jpeg",
     },
     {
       name: "Fredrick Swingle",
       university: "Illinois Tech",
-      degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member5",
-      image: "/diverse-group-city.png",
+      degree: "Business Administration",
+      linkedin: "https://www.linkedin.com/in/freddy-swingle-5684ab279/",
+      image: "/team/fredrick-swingle-avatar.png",
     },
     {
       name: "Nicolas Carrillo",
       university: "Illinois Tech",
-      degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member6",
-      image: "/diverse-group-city.png",
+      degree: "Business Administration",
+      linkedin: "https://www.linkedin.com/in/nicolas-carrillo-3b4b571aa",
+      image: "/team/nicolas-carillo-avatar.png",
     },
     {
       name: "Joshua Minami",
       university: "Illinois Tech",
-      degree: "Business & Technology",
-      linkedin: "https://linkedin.com/in/member7",
-      image: "/diverse-group-city.png",
+      degree: "Business Administration",
+      linkedin: "https://www.linkedin.com/in/joshua-minami-2888aa1ab",
+      image: "/team/joshua-minami-avatar.png",
     },
   ];
-
-  // Divide members into two rows
-  const firstRow = teamMembers.slice(0, 4);
-  const secondRow = teamMembers.slice(4, 7);
 
   return (
     <div className="container mx-auto py-8 md:py-12 px-6">
@@ -71,40 +68,15 @@ export default function TeamSlide() {
       </div>
 
       <div className="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
-        {/* First row - 4 members */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {firstRow.map((member, index) => (
-            <Link href={member.linkedin} target="_blank" key={index}>
-              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
-                <div className="aspect-square relative">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-3 md:p-4">
-                  <h3 className="font-bold text-base md:text-lg">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-1">
-                    {member.degree}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted-foreground">
-                    {member.university}
-                  </p>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {/* Second row - 3 members with adjusted width */}
-        <div className="grid grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
-          {secondRow.map((member, index) => (
-            <Link href={member.linkedin} target="_blank" key={index}>
-              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg h-full">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {teamMembers.map((member, index) => (
+            <Link
+              href={member.linkedin}
+              target="_blank"
+              key={index}
+              className="flex w-full max-w-64"
+            >
+              <Card className=" w-full block h-full overflow-hidden transition-all duration-300 hover:shadow-lg">
                 <div className="aspect-square relative">
                   <Image
                     src={member.image || "/placeholder.svg"}

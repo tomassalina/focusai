@@ -71,15 +71,19 @@ export default function TreasureChest({
     if (Math.random() < rewards.characterChance) {
       // Mock character reward
       const characters = [
-        { name: "Focus Fox", image: "/red-fox-portrait.png", rarity: "Rare" },
+        {
+          name: "Focus Fox",
+          image: "/characters/character-2-normal.png",
+          rarity: "Rare",
+        },
         {
           name: "Productivity Panda",
-          image: "/giant-panda-eating.png",
+          image: "/characters/character-3-normal.png",
           rarity: "Epic",
         },
         {
           name: "Time Wizard",
-          image: "/wise-forest-mage.png",
+          image: "/characters/character-4-normal.png",
           rarity: "Legendary",
         },
       ];

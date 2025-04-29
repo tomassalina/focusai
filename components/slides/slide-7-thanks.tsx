@@ -34,7 +34,7 @@ export default function ThanksSlide() {
                 href="https://github.com/tomassalina/focusai"
                 target="_blank"
               >
-                <Button className="mt-4" size="lg">
+                <Button className="mt-4 cursor-pointer" size="lg">
                   <Github className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                   <span className="text-sm md:text-base">View on GitHub</span>
                 </Button>
